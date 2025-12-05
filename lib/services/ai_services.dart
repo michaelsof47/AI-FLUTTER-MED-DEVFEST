@@ -2,7 +2,7 @@ part of '../import_package.dart';
 
 class AIServices {
 
-  static const String GEMINI_API_KEY = "AIzaSyAtkwBLSg8n3K6rJSnCMtGNvmGiQp1CVi0";
+  static const String GEMINI_API_KEY = "Masukkan API Key";
   late final GeminiProvider provider;
 
   AIServices() {
