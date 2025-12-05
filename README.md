@@ -8,3 +8,5 @@ Requirements:
 - Flutter 3.27.0 Version
 
 Untuk `ios` dan `android` sudah saya konfigurasikan agar bisa berjalan dengan lancar pada emulator maupun real device
+
+Untuk implementasi realm database, jalankan `flutter pub run build_runner build` untuk mendapatkan `.realm.dart` file.
