@@ -3,7 +3,7 @@ part of '../import_package.dart';
 
 class AiChatController extends GetxController {
   final aiServices = Get.put(AIServices());
-  final realmServices = RealmService.instance; // FIX: Gunakan getter instance
+  final realmServices = Get.put(RealmService());
 
   final messages = <ChatMessage>[].obs;
   String? currentConversationId;

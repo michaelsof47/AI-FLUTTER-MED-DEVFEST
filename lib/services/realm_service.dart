@@ -1,24 +1,9 @@
 part of '../import_package.dart';
 
 class RealmService {
-  static RealmService? _instance;
   late Realm _realm;
 
-  static RealmService get instance {
-    if (_instance == null) {
-      try {
-        _instance = RealmService._init();
-        print('✅ RealmService initialized successfully');
-      } catch (e, stackTrace) {
-        print('❌ RealmService initialization failed: $e');
-        print('Stack trace: $stackTrace');
-        rethrow;
-      }
-    }
-    return _instance!;
-  }
-
-  RealmService._init() {
+  RealmService() {
     try {
       final config = Configuration.local([
         ChatConversation.schema,
@@ -31,6 +16,7 @@ class RealmService {
       rethrow;
     }
   }
+
 
   ChatConversation createConversation(String title) {
     final conversation = ChatConversation(const uuid_pkg.Uuid().v4(), title,DateTime.now(), DateTime.now());
@@ -73,14 +59,10 @@ class RealmService {
     }
   }
 
-  void close() {
-    _realm.close();
-  }
+  void close() => _realm.close();
 
   // Method untuk mendapatkan path file database
-  String getRealmPath() {
-    return _realm.config.path;
-  }
+  String getRealmPath() => _realm.config.path;
 
   // Method untuk export database info
   void printDatabaseInfo() {
